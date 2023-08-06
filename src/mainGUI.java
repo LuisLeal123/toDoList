@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class mainGUI extends JFrame {
-    private JCheckBox[] checkboxes;
+    private final JCheckBox[] checkboxes;
 
     public mainGUI(String[] items) {
         super("Checklist GUI");
@@ -20,17 +20,14 @@ public class mainGUI extends JFrame {
         }
 
         JButton button = new JButton("Submit");
-        button.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                StringBuilder result = new StringBuilder("Selected Items:\n");
-                for (JCheckBox checkbox : checkboxes) {
-                    if (checkbox.isSelected()) {
-                        result.append(checkbox.getText()).append("\n");
-                    }
+        button.addActionListener(e -> {
+            StringBuilder result = new StringBuilder("Selected Items:\n");
+            for (JCheckBox checkbox : checkboxes) {
+                if (checkbox.isSelected()) {
+                    result.append(checkbox.getText()).append("\n");
                 }
-                JOptionPane.showMessageDialog(mainGUI.this, result.toString());
             }
+            JOptionPane.showMessageDialog(mainGUI.this, result.toString());
         });
 
         panel.add(button);
