@@ -1,26 +1,35 @@
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /*
         To-do list with a GUI
  Create a simple to-do list application that allows users to add,
  delete, and mark tasks as complete.
  */
+// current issue to fix: if complete, they can only be deleted
+// if you select a complete task, the non-complete tasks gray out
 public class mainGUI extends JFrame {
+    // checklist
     private JCheckBox[] checkboxes;
+    // array list which contains the tasks
     private final ArrayList<String> tasks;
 
-    // Function to open the GUI
+    // Constructor to open the GUI
     public mainGUI(String[] items) {
+        // sets the name for the window using a JFrame constructor
         super("Checklist GUI");
+        // closes the GUI instead of keeping it running
+        // JFrame inherits setDefaultCloseOperation from WindowConstants interface
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        // initialize it as an instance
+        // add tasks from input to this instance
         tasks = new ArrayList<>();
-        for (String item : items) {
-            tasks.add(item);
-        }
+        tasks.addAll(Arrays.asList(items));
 
+        // initialize array as length of tasks in input
         checkboxes = new JCheckBox[items.length];
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(items.length + 3, 1));
@@ -103,6 +112,7 @@ public class mainGUI extends JFrame {
         setVisible(true);
     }
 
+    // updates the checkboxes?
     private void updateCheckboxes() {
         getContentPane().removeAll();
         checkboxes = new JCheckBox[tasks.size()];
