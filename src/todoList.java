@@ -220,7 +220,7 @@ public class todoList extends JFrame {
 
     // main function
     public static void main(String[] args) {
-        String[] items = {"workout", "breakfast", "run"};
+        String[] items = {};
         // use a lambda to invoke the GUI
         SwingUtilities.invokeLater(() -> new todoList(items));
     }
