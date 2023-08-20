@@ -10,7 +10,7 @@ import java.util.Arrays;
  */
 
 public class todoList extends JFrame {
-    // checklist
+    // array of 'JCheckBox' instances which acts sort of like a GUI boolean array to see which are checked
     private JCheckBox[] checkboxes;
     // array list which contains the tasks
     private final ArrayList<String> tasks;
@@ -212,8 +212,8 @@ public class todoList extends JFrame {
         panel.add(addButton);
         panel.add(deleteButton);
         panel.add(completeButton);
-
         getContentPane().add(panel);
+        pack();
         revalidate();
         repaint();
     }
@@ -221,7 +221,7 @@ public class todoList extends JFrame {
     // main function
     public static void main(String[] args) {
         String[] items = {};
-        // use a lambda to invoke the GUI
+        // use a lambda to invoke the GUI (starts with nothing
         SwingUtilities.invokeLater(() -> new todoList(items));
     }
 }
