@@ -3,7 +3,7 @@ This program is a simple to-do list application that allows users to add, delete
 
 ![44256BD5-72A4-4169-B960-56E025336277_4_5005_c](https://github.com/LuisLeal123/toDoList/assets/69243042/9d24c621-b043-4860-b5c1-d77be951863c)
 
-The GUI starts with 0 tasks, as shown above, but can be filled up once prompted.
+The GUI starts with 0 tasks, as shown above, but can be filled up once prompted. This can be done by selecting 'Add Task' and typing in the desired task.
 
 ![C8A88FCD-C6A4-42DA-A32D-4759DCE643EB_4_5005_c](https://github.com/LuisLeal123/toDoList/assets/69243042/df7174bd-cfe1-45b3-a8ac-42c7193e00d6)
 
